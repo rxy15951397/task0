@@ -1,0 +1,102 @@
+.line {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 8px;
+    background: #57e5aa;
+    position: absolute;
+    z-index: -10;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.outer {
+    width: 165px;
+    height: 157px;
+    margin: auto;
+    position: relative;
+    /*阿斯达是大所*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inner {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    text-align: center;
+    line-height: 100px;
+    background: #70eab7;
+    position: relative;
+}
+
+.contentScope {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    font-size: 14px;
+    color: #ffffff;
+    bottom: 0px;
+}
+
+.outer .smallRound {
+    color: #fff;
+    text-align: center;
+    font-size: 14px;
+    border-radius: 50%;
+    text-decoration: none;
+    display: block;
+    position: absolute;
+    z-index: 10;
+    width: 38px;
+    height: 38px;
+    line-height: 38px;
+    background-color: #10da86;
+    background-clip: content-box;
+    padding: 4px;
+}
+
+.outer .smallRound:after {
+    content: '';
+    display: block;
+    position: absolute;
+    z-index: -66;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background: url("image/xiaoHuXian.png") left top no-repeat;
+    /*动画*/
+    -webkit-animation: smallRadin 10s linear 0s infinite;
+    -o-animation: smallRadin 10s linear 0s infinite;
+    animation: smallRadin 10s linear 0s infinite;
+}
+
+.outer .smallRound.start {
+    left: 0;
+    top: 0;
+}
+
+.outer .smallRound.end {
+    right: 0;
+    bottom: 0;
+}
+
+@keyframes smallRadin {
+    /*小弧度*/
+    from {
+        transform: rotate(0deg);
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.85;
+    }
+    to {
+        transform: rotate(360deg);
+        opacity: 1;
+    }
+}
